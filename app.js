@@ -8,6 +8,7 @@ const {
   ConnectDBMiddleware,
   BackupDatabaseMiddleware,
   HandleErrorMiddleware,
+  AuthenticationMiddleware,
 } = require("./Middleware/index.js");
 const router = require("./Router/index.js");
 
@@ -24,6 +25,7 @@ app
   .use(KoaBody())
   .use(HandleErrorMiddleware())
   .use(Cors())
+  .use(AuthenticationMiddleware())
   .use(router.routes())
   .use(router.allowedMethods());
 

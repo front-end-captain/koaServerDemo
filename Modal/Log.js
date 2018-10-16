@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const LogSchema = new Schema({
   type: Number,
-  date: { type: Date, default: Date.now },
+  date: { type: Date, default: new Date() },
   description: String,
   log: String,
 });
