@@ -4,7 +4,8 @@
   "description": "a demo of koa-server",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "debug": "node --inspect-brk=3000 app.js"
   },
   "author": "",
   "license": "ISC",

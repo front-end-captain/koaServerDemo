@@ -9,6 +9,7 @@ const {
   BackupDatabaseMiddleware,
   HandleErrorMiddleware,
   AuthenticationMiddleware,
+  NotFundMiddleware,
 } = require("./Middleware/index.js");
 const router = require("./Router/index.js");
 
@@ -25,9 +26,10 @@ app
   .use(KoaBody())
   .use(HandleErrorMiddleware())
   .use(Cors())
+  .use(NotFundMiddleware())
   .use(AuthenticationMiddleware())
   .use(router.routes())
-  .use(router.allowedMethods());
+  .use(router.allowedMethods())
 
 app.listen(PORT, () => {
   console.log(Chalk.red(`The server is listen at ${PORT}`));
