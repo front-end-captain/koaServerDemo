@@ -1,6 +1,7 @@
 const { Log } = require("./../Modal/index.js");
 
 const getLog = async (context) => {
+  // const { id } = context.params;
   const logData = await Log.find({});
   context.status = 200;
   context.body = { code: 1, data: logData };
